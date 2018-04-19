@@ -20,6 +20,21 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-
+    @IBAction func buttonPressed(_ sender: Any) {
+        let myAlertController = UIAlertController(title: "알람", message: "설정된 시간이 되었습니다.", preferredStyle: UIAlertControllerStyle.alert)
+        
+        //AlertAction 만들기
+        let okAction = UIAlertAction(title: "확인", style: UIAlertActionStyle.default, handler: {
+            (myAction: UIAlertAction) -> Void in
+            self.view.backgroundColor = UIColor.green
+        })
+        
+        //AlertAction을 UIAlertController에 넣기
+        myAlertController.addAction(okAction)
+        
+        //화면에 출력
+        present(myAlertController, animated: true, completion: nil)
+    }
+    
 }
 
